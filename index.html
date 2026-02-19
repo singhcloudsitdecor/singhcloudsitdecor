@@ -24,21 +24,32 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: var(--light);
+    background: linear-gradient(135deg, #0f3057, #2ea3b0);
     color: var(--primary);
 }
 
-/* --- FIXED NAVBAR: Logo & Name side-by-side --- */
+/* ===== GLASSMORPHISM BASE ===== */
+.glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== NAVBAR ===== */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 10px 5%;
+    padding: 12px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
 }
 
@@ -51,14 +62,13 @@ nav {
 
 nav img {
     height: 45px;
-    width: auto;
 }
 
 .brand-text {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-size: 20px;
-    color: var(--primary);
+    color: white;
 }
 
 nav ul {
@@ -72,27 +82,36 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--primary);
+    color: white;
     font-weight: 500;
+    transition: 0.3s;
 }
 
-/* --- SHORTENED HERO: Blue background height fix --- */
+nav ul li a:hover {
+    color: var(--beige);
+}
+
+/* ===== HERO ===== */
 .hero {
-    height: 60vh; /* This makes the blue section much shorter */
-    min-height: 400px;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 80px; /* Prevents text from hiding behind navbar */
-    background: linear-gradient(to right, var(--primary), var(--accent));
+    padding-top: 80px;
     color: white;
+}
+
+.hero-content {
+    padding: 50px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
 }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: 42px;
-    line-height: 1.2;
 }
 
 .hero p {
@@ -111,19 +130,25 @@ nav ul li a {
     text-decoration: none;
     display: inline-block;
     transition: 0.3s;
-    border-radius: 4px;
+    border-radius: 30px;
 }
 
-/* --- Content Sections --- */
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* ===== SECTIONS ===== */
 section {
-    padding: 70px 10%;
+    padding: 80px 10%;
+    background: transparent;
 }
 
 .section-title {
     text-align: center;
     font-size: 32px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-family: 'Playfair Display', serif;
+    color: white;
 }
 
 .services {
@@ -133,10 +158,14 @@ section {
 }
 
 .card {
-    background: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    color: white;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
 }
 
 .gallery {
@@ -149,17 +178,22 @@ section {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
 }
 
 .contact-box {
-    background: var(--primary);
-    color: white;
-    padding: 40px;
-    border-radius: 15px;
+    padding: 50px;
+    border-radius: 20px;
     text-align: center;
+    color: white;
 }
 
+/* WhatsApp Button */
 .whatsapp {
     position: fixed;
     bottom: 20px;
@@ -173,12 +207,10 @@ section {
     z-index: 1001;
 }
 
-/* Mobile Fixes */
+/* Mobile */
 @media(max-width: 768px) {
-    .brand-text { font-size: 16px; }
     nav ul { display: none; }
-    .hero h1 { font-size: 30px; }
-    .hero { height: 50vh; }
+    .hero h1 { font-size: 28px; }
 }
 </style>
 </head>
@@ -198,7 +230,7 @@ section {
 </nav>
 
 <div class="hero">
-    <div>
+    <div class="hero-content glass">
         <h1>Luxury Comfort.<br>Custom Crafted.</h1>
         <p>Serving All Over Delhi NCR</p>
         <p>Owner: Harjot Singh</p>
@@ -209,48 +241,33 @@ section {
 <section id="services">
     <h2 class="section-title">Our Services</h2>
     <div class="services">
-        <div class="card">
+        <div class="card glass">
             <h3>Sofa Manufacturing</h3>
             <p>Premium custom sofas designed as per your comfort and style.</p>
         </div>
-        <div class="card">
+        <div class="card glass">
             <h3>Bed Manufacturing</h3>
             <p>Luxury, durable and fully customizable bed designs.</p>
         </div>
-        <div class="card">
+        <div class="card glass">
             <h3>On-Site Repair</h3>
             <p>Professional sofa & bed repair services at your home.</p>
         </div>
     </div>
 </section>
 
-<section id="beds" style="background: #fff;">
-    <h2 class="section-title">Premium Bed Collection</h2>
-    <div class="gallery">
-        <img src="https://raw.githubusercontent.com/singhcloudsitdecor/singhcloudsitdecor/main/images/WhatsApp%20Image%202026-02-19%20at%208.52.17%20PM%20-%20Copy.jpeg" alt="Luxury Tufted Bed">
-        
-        <img src="https://unsplash.com/photos/3d-render-modern-bedroom-6MTDTO_sSmc" alt="Modern Bed Design">
-        <img src="https://unsplash.com/photos/a-bedroom-with-a-large-bed-and-a-large-window-90xhKds5L5M" alt="Custom Bed Design">
-        <img src="https://unsplash.com/photos/white-bed-near-brown-wooden-table-fCSnaK8oB6M" alt="Royal Bed Design">
-        <img src="https://unsplash.com/photos/a-modern-bedroom-with-a-tufted-headboard-and-art-afU-_8JLvwI" alt="Chester Bed Design">
-
-    </div>
-</section>
-
-<hr style="border: 0; height: 1px; background: #eee; margin: 0 10%;">
-
 <section id="gallery">
-    <h2 class="section-title">Luxury Sofa Collection</h2>
+    <h2 class="section-title">Our Luxury Sofa Collection</h2>
     <div class="gallery">
-        <img src="https://www.istockphoto.com/photo/modern-scandinavian-living-room-interior-3d-render-gm1191254426-337998856" alt="Designer Sofa Set">
-        <img src="https://www.istockphoto.com/photo/retro-leather-sofa-gm95383220-8560908" alt="Premium Chesterfield Sofa">
-        <img src="https://www.istockphoto.com/photo/stylish-furniture-gm1455170683-490586970" alt="Luxury Lounge Sofa">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1000&q=80">
+        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=80">
     </div>
 </section>
 
 <section id="contact">
     <h2 class="section-title">Contact Us</h2>
-    <div class="contact-box">
+    <div class="contact-box glass">
         <p><strong>Owner:</strong> Harjot Singh</p>
         <p><strong>Phone:</strong> 9899256684</p>
         <p><strong>WhatsApp:</strong> 9899256684</p>
@@ -261,10 +278,9 @@ section {
 
 <a href="https://wa.me/919899256684" class="whatsapp" target="_blank">WhatsApp</a>
 
-<footer style="text-align: center; padding: 20px; color: #777; background: #fff;">
+<footer style="text-align:center;padding:20px;color:white;">
     © 2026 Singh CloudSit Decor | All Rights Reserved
 </footer>
 
 </body>
 </html>
-
