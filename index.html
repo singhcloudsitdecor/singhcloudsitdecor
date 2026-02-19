@@ -8,49 +8,49 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root{
-    --primary:#0f3057;
-    --accent:#2ea3b0;
-    --beige:#d6b88d;
-    --light:#f4f7f8;
+:root {
+    --primary: #0f3057;
+    --accent: #2ea3b0;
+    --beige: #d6b88d;
+    --light: #f4f7f8;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:var(--light);
-    color:var(--primary);
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--primary);
 }
 
-/* --- Fixed Navbar with Brand Name on Right of Logo --- */
-nav{
-    position:fixed;
+/* --- FIXED NAVBAR: Logo & Name side-by-side --- */
+nav {
+    position: fixed;
     top: 0;
-    width:100%;
-    padding:10px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:white;
-    box-shadow:0 5px 20px rgba(0,0,0,0.05);
-    z-index:1000;
+    width: 100%;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    z-index: 1000;
 }
 
-.brand-container {
+.brand-wrap {
     display: flex;
     align-items: center;
     text-decoration: none;
-    gap: 12px; /* Space between logo and name */
+    gap: 12px;
 }
 
-nav img{
-    height:45px;
+nav img {
+    height: 45px;
     width: auto;
 }
 
@@ -59,124 +59,124 @@ nav img{
     font-weight: 700;
     font-size: 20px;
     color: var(--primary);
-    white-space: nowrap;
 }
 
-nav ul{
-    display:flex;
-    list-style:none;
+nav ul {
+    display: flex;
+    list-style: none;
 }
 
-nav ul li{
-    margin-left:25px;
+nav ul li {
+    margin-left: 25px;
 }
 
-nav ul li a{
-    text-decoration:none;
-    color:var(--primary);
-    font-weight:500;
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
 }
 
-/* --- Shortened Hero Section --- */
-.hero{
-    height: 60vh; /* Reduced height as requested */
+/* --- SHORTENED HERO: Blue background height fix --- */
+.hero {
+    height: 60vh; /* This makes the blue section much shorter */
     min-height: 400px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding-top: 80px; /* Space for the fixed navbar */
-    background:linear-gradient(to right, var(--primary), var(--accent));
-    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px; /* Prevents text from hiding behind navbar */
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    color: white;
 }
 
-.hero h1{
-    font-family:'Playfair Display',serif;
-    font-size:42px;
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
     line-height: 1.2;
 }
 
-.hero p{
-    margin-top:10px;
-    font-size:18px;
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
 }
 
-.btn{
-    margin-top:25px;
-    padding:12px 35px;
-    border:none;
-    background:var(--beige);
-    color:var(--primary);
-    font-weight:600;
-    cursor:pointer;
-    text-decoration:none;
-    display:inline-block;
-    transition:0.3s;
+.btn {
+    margin-top: 25px;
+    padding: 12px 35px;
+    border: none;
+    background: var(--beige);
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
     border-radius: 4px;
 }
 
 /* --- Content Sections --- */
-section{
-    padding:70px 10%;
+section {
+    padding: 70px 10%;
 }
 
-.section-title{
-    text-align:center;
-    font-size:32px;
-    margin-bottom:40px;
-    font-family:'Playfair Display',serif;
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
 }
 
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.gallery img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:12px;
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
-.contact-box{
-    background:var(--primary);
-    color:white;
-    padding:40px;
-    border-radius:15px;
-    text-align:center;
+.contact-box {
+    background: var(--primary);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
 }
 
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:12px 25px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:bold;
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
     z-index: 1001;
 }
 
-@media(max-width:768px){
+/* Mobile Fixes */
+@media(max-width: 768px) {
     .brand-text { font-size: 16px; }
-    nav ul { display: none; } /* Cleaner mobile view */
+    nav ul { display: none; }
     .hero h1 { font-size: 30px; }
     .hero { height: 50vh; }
 }
@@ -186,7 +186,7 @@ section{
 <body>
 
 <nav>
-    <a href="#" class="brand-container">
+    <a href="#" class="brand-wrap">
         <img src="logo.png" alt="Singh CloudSit Decor">
         <span class="brand-text">Singh CloudSit Decor</span>
     </a>
@@ -200,9 +200,9 @@ section{
 <div class="hero">
     <div>
         <h1>Luxury Comfort.<br>Custom Crafted.</h1>
-        [span_0](start_span)<p>Serving All Over Delhi NCR[span_0](end_span)</p>
-        [span_1](start_span)<p>Owner: Harjot Singh[span_1](end_span)</p>
-        [span_2](start_span)<a href="tel:+919899256684" class="btn">Call Now[span_2](end_span)</a>
+        <p>Serving All Over Delhi NCR</p>
+        <p>Owner: Harjot Singh</p>
+        <a href="tel:+919899256684" class="btn">Call Now</a>
     </div>
 </div>
 
@@ -210,16 +210,16 @@ section{
     <h2 class="section-title">Our Services</h2>
     <div class="services">
         <div class="card">
-            [span_3](start_span)<h3>Sofa Manufacturing[span_3](end_span)</h3>
-            [span_4](start_span)<p>Premium custom sofas designed as per your comfort and style.[span_4](end_span)</p>
+            <h3>Sofa Manufacturing</h3>
+            <p>Premium custom sofas designed as per your comfort and style.</p>
         </div>
         <div class="card">
-            [span_5](start_span)<h3>Bed Manufacturing[span_5](end_span)</h3>
-            [span_6](start_span)<p>Luxury, durable and fully customizable bed designs.[span_6](end_span)</p>
+            <h3>Bed Manufacturing</h3>
+            <p>Luxury, durable and fully customizable bed designs.</p>
         </div>
         <div class="card">
-            [span_7](start_span)<h3>On-Site Repair[span_7](end_span)</h3>
-            [span_8](start_span)<p>Professional sofa & bed repair services at your home.[span_8](end_span)</p>
+            <h3>On-Site Repair</h3>
+            <p>Professional sofa & bed repair services at your home.</p>
         </div>
     </div>
 </section>
@@ -236,18 +236,18 @@ section{
 <section id="contact">
     <h2 class="section-title">Contact Us</h2>
     <div class="contact-box">
-        [span_9](start_span)<p><strong>Owner:</strong> Harjot Singh[span_9](end_span)</p>
-        [span_10](start_span)<p><strong>Phone:</strong> 9899256684[span_10](end_span)</p>
-        [span_11](start_span)<p><strong>WhatsApp:</strong> 9899256684[span_11](end_span)</p>
+        <p><strong>Owner:</strong> Harjot Singh</p>
+        <p><strong>Phone:</strong> 9899256684</p>
+        <p><strong>WhatsApp:</strong> 9899256684</p>
         <p><strong>Address:</strong><br>
-        [span_12](start_span)Shop No - 9, Central Plaza, Noida Sector 4, Near Gaur City Mall, Delhi NCR[span_12](end_span)</p>
+        Shop No - 9, Central Plaza, Noida Sector 4, Near Gaur City Mall, Delhi NCR</p>
     </div>
 </section>
 
-[span_13](start_span)<a href="https://wa.me/919899256684" class="whatsapp" target="_blank">WhatsApp[span_13](end_span)</a>
+<a href="https://wa.me/919899256684" class="whatsapp" target="_blank">WhatsApp</a>
 
-<footer style="text-align:center; padding:20px; color:#777; background:#fff;">
-    © 2026 Singh CloudSit Decor | [span_14](start_span)All Rights Reserved[span_14](end_span)
+<footer style="text-align: center; padding: 20px; color: #777; background: #fff;">
+    © 2026 Singh CloudSit Decor | All Rights Reserved
 </footer>
 
 </body>
