@@ -24,32 +24,21 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f3057, #2ea3b0);
+    background: var(--light);
     color: var(--primary);
 }
 
-/* ===== GLASSMORPHISM BASE ===== */
-.glass {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-/* ===== NAVBAR ===== */
+/* --- FIXED NAVBAR: Logo & Name side-by-side --- */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 12px 5%;
+    padding: 10px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     z-index: 1000;
 }
 
@@ -62,13 +51,14 @@ nav {
 
 nav img {
     height: 45px;
+    width: auto;
 }
 
 .brand-text {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-size: 20px;
-    color: white;
+    color: var(--primary);
 }
 
 nav ul {
@@ -82,36 +72,27 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--primary);
     font-weight: 500;
-    transition: 0.3s;
 }
 
-nav ul li a:hover {
-    color: var(--beige);
-}
-
-/* ===== HERO ===== */
+/* --- SHORTENED HERO: Blue background height fix --- */
 .hero {
-    height: 70vh;
+    height: 60vh; /* This makes the blue section much shorter */
+    min-height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 80px; /* Prevents text from hiding behind navbar */
+    background: linear-gradient(to right, var(--primary), var(--accent));
     color: white;
-}
-
-.hero-content {
-    padding: 50px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
 }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: 42px;
+    line-height: 1.2;
 }
 
 .hero p {
@@ -130,25 +111,19 @@ nav ul li a:hover {
     text-decoration: none;
     display: inline-block;
     transition: 0.3s;
-    border-radius: 30px;
+    border-radius: 4px;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-}
-
-/* ===== SECTIONS ===== */
+/* --- Content Sections --- */
 section {
-    padding: 80px 10%;
-    background: transparent;
+    padding: 70px 10%;
 }
 
 .section-title {
     text-align: center;
     font-size: 32px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     font-family: 'Playfair Display', serif;
-    color: white;
 }
 
 .services {
@@ -158,14 +133,10 @@ section {
 }
 
 .card {
+    background: white;
     padding: 30px;
     border-radius: 15px;
-    color: white;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .gallery {
@@ -178,22 +149,17 @@ section {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 15px;
-    transition: 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
+    border-radius: 12px;
 }
 
 .contact-box {
-    padding: 50px;
-    border-radius: 20px;
-    text-align: center;
+    background: var(--primary);
     color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
 }
 
-/* WhatsApp Button */
 .whatsapp {
     position: fixed;
     bottom: 20px;
@@ -207,10 +173,12 @@ section {
     z-index: 1001;
 }
 
-/* Mobile */
+/* Mobile Fixes */
 @media(max-width: 768px) {
+    .brand-text { font-size: 16px; }
     nav ul { display: none; }
-    .hero h1 { font-size: 28px; }
+    .hero h1 { font-size: 30px; }
+    .hero { height: 50vh; }
 }
 </style>
 </head>
@@ -230,7 +198,7 @@ section {
 </nav>
 
 <div class="hero">
-    <div class="hero-content glass">
+    <div>
         <h1>Luxury Comfort.<br>Custom Crafted.</h1>
         <p>Serving All Over Delhi NCR</p>
         <p>Owner: Harjot Singh</p>
@@ -241,15 +209,15 @@ section {
 <section id="services">
     <h2 class="section-title">Our Services</h2>
     <div class="services">
-        <div class="card glass">
+        <div class="card">
             <h3>Sofa Manufacturing</h3>
             <p>Premium custom sofas designed as per your comfort and style.</p>
         </div>
-        <div class="card glass">
+        <div class="card">
             <h3>Bed Manufacturing</h3>
             <p>Luxury, durable and fully customizable bed designs.</p>
         </div>
-        <div class="card glass">
+        <div class="card">
             <h3>On-Site Repair</h3>
             <p>Professional sofa & bed repair services at your home.</p>
         </div>
@@ -259,15 +227,15 @@ section {
 <section id="gallery">
     <h2 class="section-title">Our Luxury Sofa Collection</h2>
     <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1000&q=80">
-        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=80">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1000&q=80" alt="Luxury Sofa">
+        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80" alt="Modern Sofa">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=80" alt="Designer Sofa">
     </div>
 </section>
 
 <section id="contact">
     <h2 class="section-title">Contact Us</h2>
-    <div class="contact-box glass">
+    <div class="contact-box">
         <p><strong>Owner:</strong> Harjot Singh</p>
         <p><strong>Phone:</strong> 9899256684</p>
         <p><strong>WhatsApp:</strong> 9899256684</p>
@@ -278,7 +246,7 @@ section {
 
 <a href="https://wa.me/919899256684" class="whatsapp" target="_blank">WhatsApp</a>
 
-<footer style="text-align:center;padding:20px;color:white;">
+<footer style="text-align: center; padding: 20px; color: #777; background: #fff;">
     © 2026 Singh CloudSit Decor | All Rights Reserved
 </footer>
 
