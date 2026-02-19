@@ -8,12 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
     --primary:#0f3057;
     --accent:#2ea3b0;
     --beige:#d6b88d;
-    --light:#f4f7f8;
+    -[span_2](start_span)-light:#f4f7f8;[span_2](end_span)
 }
 
 *{
@@ -26,33 +25,48 @@
 body{
     font-family:'Poppins',sans-serif;
     background:var(--light);
-    color:var(--primary);
+    [span_3](start_span)color:var(--primary);[span_3](end_span)
 }
 
 /* Navbar */
 nav{
     position:fixed;
     width:100%;
-    padding:20px 60px;
+    padding:15px 60px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     background:white;
     box-shadow:0 5px 20px rgba(0,0,0,0.05);
-    z-index:1000;
+    [span_4](start_span)z-index:1000;[span_4](end_span)
+}
+
+/* New Logo & Brand Name Container */
+.brand-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
 }
 
 nav img{
-    height:55px;
+    [span_5](start_span)height:45px;[span_5](end_span)
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--primary);
 }
 
 nav ul{
     display:flex;
-    list-style:none;
+    [span_6](start_span)list-style:none;[span_6](end_span)
 }
 
 nav ul li{
-    margin-left:35px;
+    [span_7](start_span)margin-left:35px;[span_7](end_span)
 }
 
 nav ul li a{
@@ -61,26 +75,27 @@ nav ul li a{
     font-weight:500;
 }
 
-/* Hero */
+/* Updated Hero - Shortened Height */
 .hero{
-    height:100vh;
+    height: 60vh; /* Reduced from 100vh to make it shorter */
+    min-height: 400px;
     display:flex;
     justify-content:center;
     align-items:center;
-    text-align:center;
-    padding:20px;
-    background:linear-gradient(to right,var(--primary),var(--accent));
+    [span_8](start_span)text-align:center;[span_8](end_span)
+    padding:80px 20px 20px 20px;
+    [span_9](start_span)background:linear-gradient(to right,var(--primary),var(--accent));[span_9](end_span)
     color:white;
 }
 
 .hero h1{
     font-family:'Playfair Display',serif;
-    font-size:50px;
+    font-size:45px;
 }
 
 .hero p{
-    margin-top:20px;
-    font-size:18px;
+    margin-top:15px;
+    [span_10](start_span)font-size:18px;[span_10](end_span)
 }
 
 .btn{
@@ -93,30 +108,29 @@ nav ul li a{
     cursor:pointer;
     text-decoration:none;
     display:inline-block;
-    transition:0.3s;
+    [span_11](start_span)transition:0.3s;[span_11](end_span)
 }
 
 .btn:hover{
-    transform:scale(1.05);
+    [span_12](start_span)transform:scale(1.05);[span_12](end_span)
 }
 
-/* Sections */
+/* Rest of Sections */
 section{
-    padding:100px 10%;
+    [span_13](start_span)padding:80px 10%;[span_13](end_span)
 }
 
 .section-title{
     text-align:center;
     font-size:36px;
     margin-bottom:50px;
-    font-family:'Playfair Display',serif;
+    [span_14](start_span)font-family:'Playfair Display',serif;[span_14](end_span)
 }
 
-/* Services */
 .services{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+    [span_15](start_span)gap:30px;[span_15](end_span)
 }
 
 .card{
@@ -124,23 +138,17 @@ section{
     padding:35px;
     border-radius:15px;
     box-shadow:0 15px 40px rgba(0,0,0,0.08);
-    transition:0.3s;
+    [span_16](start_span)transition:0.3s;[span_16](end_span)
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    [span_17](start_span)transform:translateY(-8px);[span_17](end_span)
 }
 
-.card h3{
-    color:var(--accent);
-    margin-bottom:10px;
-}
-
-/* Gallery */
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+    [span_18](start_span)gap:25px;[span_18](end_span)
 }
 
 .gallery img{
@@ -149,34 +157,17 @@ section{
     object-fit:cover;
     border-radius:15px;
     transition:0.4s;
-    box-shadow:0 15px 35px rgba(0,0,0,0.1);
+    [span_19](start_span)box-shadow:0 15px 35px rgba(0,0,0,0.1);[span_19](end_span)
 }
 
-.gallery img:hover{
-    transform:scale(1.05);
-}
-
-/* Contact */
 .contact-box{
     background:var(--primary);
-    color:white;
+    [span_20](start_span)color:white;[span_20](end_span)
     padding:50px;
     border-radius:15px;
     text-align:center;
 }
 
-.map{
-    margin-top:30px;
-}
-
-footer{
-    text-align:center;
-    padding:20px;
-    background:white;
-    color:#777;
-}
-
-/* WhatsApp Floating */
 .whatsapp{
     position:fixed;
     bottom:20px;
@@ -186,38 +177,37 @@ footer{
     padding:15px 20px;
     border-radius:50px;
     text-decoration:none;
-    font-weight:bold;
+    [span_21](start_span)font-weight:bold;[span_21](end_span)
 }
 
 @media(max-width:768px){
-    nav{
-        padding:20px;
-    }
-    .hero h1{
-        font-size:32px;
-    }
+    nav{ padding:15px 20px; [span_22](start_span)}
+    .brand-name { font-size: 16px; }
+    .hero h1{ font-size:32px; }[span_22](end_span)
+    .hero { height: 50vh; }
 }
-
 </style>
 </head>
 
 <body>
 
 <nav>
-    <img src="logo.png" alt="Singh CloudSit Decor">
+    <a href="#" class="brand-box">
+        <img src="logo.png" alt="Singh CloudSit Decor">
+        <span class="brand-name">Singh CloudSit Decor</span>
+    </a>
     <ul>
         <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
 <div class="hero">
     <div>
-        <h1>Luxury Comfort. Custom Crafted.</h1>
-        <p>Serving All Over Delhi NCR</p>
-        <p>Owner: Harjot Singh</p>
-        <a href="tel:+919899256684" class="btn">Call Now</a>
+        [span_23](start_span)<h1>Luxury Comfort.<br>Custom Crafted.</h1>[span_23](end_span)
+        [span_24](start_span)<p>Serving All Over Delhi NCR</p>[span_24](end_span)
+        [span_25](start_span)<p>Owner: Harjot Singh</p>[span_25](end_span)
+        [span_26](start_span)<a href="tel:+919899256684" class="btn">Call Now</a>[span_26](end_span)
     </div>
 </div>
 
@@ -225,20 +215,20 @@ footer{
     <h2 class="section-title">Our Services</h2>
     <div class="services">
         <div class="card">
-            <h3>Sofa Manufacturing</h3>
-            <p>Premium custom sofas designed as per your comfort and style.</p>
+            [span_27](start_span)<h3>Sofa Manufacturing</h3>[span_27](end_span)
+            [span_28](start_span)<p>Premium custom sofas designed as per your comfort and style.</p>[span_28](end_span)
         </div>
         <div class="card">
-            <h3>Bed Manufacturing</h3>
-            <p>Luxury, durable and fully customizable bed designs.</p>
+            [span_29](start_span)<h3>Bed Manufacturing</h3>[span_29](end_span)
+            [span_30](start_span)<p>Luxury, durable and fully customizable bed designs.</p>[span_30](end_span)
         </div>
         <div class="card">
-            <h3>On-Site Repair</h3>
-            <p>Professional sofa & bed repair services at your home.</p>
+            [span_31](start_span)<h3>On-Site Repair</h3>[span_31](end_span)
+            [span_32](start_span)<p>Professional sofa & bed repair services at your home.</p>[span_32](end_span)
         </div>
         <div class="card">
-            <h3>Complete Customization</h3>
-            <p>Select fabric, size, design & comfort level tailored for you.</p>
+            [span_33](start_span)<h3>Complete Customization</h3>[span_33](end_span)
+            [span_34](start_span)<p>Select fabric, size, design & comfort level tailored for you.</p>[span_34](end_span)
         </div>
     </div>
 </section>
@@ -246,41 +236,28 @@ footer{
 <section id="gallery">
     <h2 class="section-title">Our Luxury Sofa Collection</h2>
     <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1000&q=80" alt="Luxury Sofa">
-        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80" alt="Modern Sofa">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=80" alt="Designer Sofa">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="Premium Sofa">
-        <img src="https://images.unsplash.com/photo-1598300053653-5f4d4f6cbd6d?auto=format&fit=crop&w=1000&q=80" alt="Custom Sofa">
-        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1000&q=80" alt="Luxury Interior Sofa">
+        [span_35](start_span)<img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1000&q=80" alt="Luxury Sofa">[span_35](end_span)
+        [span_36](start_span)<img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80" alt="Modern Sofa">[span_36](end_span)
+        [span_37](start_span)<img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=80" alt="Designer Sofa">[span_37](end_span)
     </div>
 </section>
 
 <section id="contact">
     <h2 class="section-title">Contact Us</h2>
     <div class="contact-box">
-        <p><strong>Owner:</strong> Harjot Singh</p>
-        <p><strong>Phone:</strong> 9899256684</p>
-        <p><strong>WhatsApp:</strong> 9899256684</p>
+        [span_38](start_span)<p><strong>Owner:</strong> Harjot Singh</p>[span_38](end_span)
+        [span_39](start_span)<p><strong>Phone:</strong> 9899256684</p>[span_39](end_span)
+        [span_40](start_span)<p><strong>WhatsApp:</strong> 9899256684</p>[span_40](end_span)
         <p><strong>Address:</strong><br>
         Shop No - 9, Central Plaza, Noida Sector 4<br>
-        Near Gaur City Mall<br>
-        Delhi NCR</p>
-
-        <div class="map">
-            <iframe 
-                src="https://www.google.com/maps?q=Central+Plaza+Noida+Sector+4+Near+Gaur+City+Mall&output=embed"
-                width="100%" height="250" style="border:0;" allowfullscreen="">
-            </iframe>
-        </div>
+        [span_41](start_span)Near Gaur City Mall, Delhi NCR</p>[span_41](end_span)
     </div>
 </section>
 
-<a href="https://wa.me/919899256684" class="whatsapp" target="_blank">
-    WhatsApp
-</a>
+<a href="https://wa.me/919899256684" class="whatsapp" target="_blank">WhatsApp</a>
 
-<footer>
-    © 2026 Singh CloudSit Decor | All Rights Reserved
+<footer style="text-align:center; padding:20px; color:#777;">
+    © 2026 Singh CloudSit Decor | [span_42](start_span)[span_43](start_span)All Rights Reserved[span_42](end_span)[span_43](end_span)
 </footer>
 
 </body>
