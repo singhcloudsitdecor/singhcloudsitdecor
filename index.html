@@ -12,7 +12,7 @@
     --primary:#0f3057;
     --accent:#2ea3b0;
     --beige:#d6b88d;
-    -[span_2](start_span)-light:#f4f7f8;[span_2](end_span)
+    --light:#f4f7f8;
 }
 
 *{
@@ -25,82 +25,86 @@
 body{
     font-family:'Poppins',sans-serif;
     background:var(--light);
-    [span_3](start_span)color:var(--primary);[span_3](end_span)
+    color:var(--primary);
 }
 
-/* Navbar */
+/* --- Fixed Navbar --- */
 nav{
     position:fixed;
+    top: 0;
     width:100%;
-    padding:15px 60px;
+    padding:10px 5%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     background:white;
     box-shadow:0 5px 20px rgba(0,0,0,0.05);
-    [span_4](start_span)z-index:1000;[span_4](end_span)
+    z-index:1000;
 }
 
-/* New Logo & Brand Name Container */
-.brand-box {
+.brand-container {
     display: flex;
     align-items: center;
-    gap: 12px;
     text-decoration: none;
+    gap: 10px;
 }
 
 nav img{
-    [span_5](start_span)height:45px;[span_5](end_span)
+    height:45px; /* Smaller logo to fit brand name next to it */
+    width: auto;
 }
 
-.brand-name {
+.brand-text {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
     color: var(--primary);
+    white-space: nowrap;
 }
 
 nav ul{
     display:flex;
-    [span_6](start_span)list-style:none;[span_6](end_span)
+    list-style:none;
 }
 
 nav ul li{
-    [span_7](start_span)margin-left:35px;[span_7](end_span)
+    margin-left:20px;
 }
 
 nav ul li a{
     text-decoration:none;
     color:var(--primary);
     font-weight:500;
+    font-size: 14px;
 }
 
-/* Updated Hero - Shortened Height */
+/* --- Shortened Hero Section --- */
 .hero{
-    height: 60vh; /* Reduced from 100vh to make it shorter */
-    min-height: 400px;
+    min-height: 450px; /* Ensures it doesn't get too small */
+    height: 70vh;      /* Shortened from original 100vh */
     display:flex;
     justify-content:center;
     align-items:center;
-    [span_8](start_span)text-align:center;[span_8](end_span)
-    padding:80px 20px 20px 20px;
-    [span_9](start_span)background:linear-gradient(to right,var(--primary),var(--accent));[span_9](end_span)
+    text-align:center;
+    padding: 100px 20px 40px 20px; /* Added top padding to push content below navbar */
+    background:linear-gradient(to right,var(--primary),var(--accent));
     color:white;
 }
 
 .hero h1{
     font-family:'Playfair Display',serif;
-    font-size:45px;
+    font-size:40px;
+    line-height: 1.2;
 }
 
 .hero p{
     margin-top:15px;
-    [span_10](start_span)font-size:18px;[span_10](end_span)
+    font-size:16px;
 }
 
 .btn{
     margin-top:25px;
-    padding:14px 40px;
+    padding:12px 35px;
     border:none;
     background:var(--beige);
     color:var(--primary);
@@ -108,62 +112,52 @@ nav ul li a{
     cursor:pointer;
     text-decoration:none;
     display:inline-block;
-    [span_11](start_span)transition:0.3s;[span_11](end_span)
+    transition:0.3s;
+    border-radius: 5px;
 }
 
-.btn:hover{
-    [span_12](start_span)transform:scale(1.05);[span_12](end_span)
-}
-
-/* Rest of Sections */
+/* --- Other Sections --- */
 section{
-    [span_13](start_span)padding:80px 10%;[span_13](end_span)
+    padding:60px 10%;
 }
 
 .section-title{
     text-align:center;
-    font-size:36px;
-    margin-bottom:50px;
-    [span_14](start_span)font-family:'Playfair Display',serif;[span_14](end_span)
+    font-size:32px;
+    margin-bottom:40px;
+    font-family:'Playfair Display',serif;
 }
 
 .services{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    [span_15](start_span)gap:30px;[span_15](end_span)
+    gap:20px;
 }
 
 .card{
     background:white;
-    padding:35px;
+    padding:25px;
     border-radius:15px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.08);
-    [span_16](start_span)transition:0.3s;[span_16](end_span)
-}
-
-.card:hover{
-    [span_17](start_span)transform:translateY(-8px);[span_17](end_span)
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    [span_18](start_span)gap:25px;[span_18](end_span)
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
 }
 
 .gallery img{
     width:100%;
-    height:280px;
+    height:250px;
     object-fit:cover;
-    border-radius:15px;
-    transition:0.4s;
-    [span_19](start_span)box-shadow:0 15px 35px rgba(0,0,0,0.1);[span_19](end_span)
+    border-radius:10px;
 }
 
 .contact-box{
     background:var(--primary);
-    [span_20](start_span)color:white;[span_20](end_span)
-    padding:50px;
+    color:white;
+    padding:40px;
     border-radius:15px;
     text-align:center;
 }
@@ -174,17 +168,20 @@ section{
     right:20px;
     background:#25D366;
     color:white;
-    padding:15px 20px;
+    padding:12px 20px;
     border-radius:50px;
     text-decoration:none;
-    [span_21](start_span)font-weight:bold;[span_21](end_span)
+    font-weight:bold;
+    z-index: 1001;
 }
 
+/* Mobile Adjustments */
 @media(max-width:768px){
-    nav{ padding:15px 20px; [span_22](start_span)}
-    .brand-name { font-size: 16px; }
-    .hero h1{ font-size:32px; }[span_22](end_span)
-    .hero { height: 50vh; }
+    nav { padding: 10px 15px; }
+    .brand-text { font-size: 14px; }
+    nav ul li { margin-left: 10px; }
+    .hero h1 { font-size: 28px; }
+    .hero { height: 60vh; padding-top: 120px; }
 }
 </style>
 </head>
@@ -192,22 +189,23 @@ section{
 <body>
 
 <nav>
-    <a href="#" class="brand-box">
+    <a href="#" class="brand-container">
         <img src="logo.png" alt="Singh CloudSit Decor">
-        <span class="brand-name">Singh CloudSit Decor</span>
+        <span class="brand-text">Singh CloudSit Decor</span>
     </a>
     <ul>
         <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
 <div class="hero">
     <div>
-        [span_23](start_span)<h1>Luxury Comfort.<br>Custom Crafted.</h1>[span_23](end_span)
-        [span_24](start_span)<p>Serving All Over Delhi NCR</p>[span_24](end_span)
-        [span_25](start_span)<p>Owner: Harjot Singh</p>[span_25](end_span)
-        [span_26](start_span)<a href="tel:+919899256684" class="btn">Call Now</a>[span_26](end_span)
+        <h1>Luxury Comfort.<br>Custom Crafted.</h1>
+        [span_2](start_span)<p>Serving All Over Delhi NCR[span_2](end_span)</p>
+        [span_3](start_span)<p>Owner: Harjot Singh[span_3](end_span)</p>
+        [span_4](start_span)<a href="tel:+919899256684" class="btn">Call Now[span_4](end_span)</a>
     </div>
 </div>
 
@@ -215,20 +213,12 @@ section{
     <h2 class="section-title">Our Services</h2>
     <div class="services">
         <div class="card">
-            [span_27](start_span)<h3>Sofa Manufacturing</h3>[span_27](end_span)
-            [span_28](start_span)<p>Premium custom sofas designed as per your comfort and style.</p>[span_28](end_span)
+            <h3>Sofa Manufacturing</h3>
+            [span_5](start_span)<p>Premium custom sofas designed as per your comfort and style.[span_5](end_span)</p>
         </div>
         <div class="card">
-            [span_29](start_span)<h3>Bed Manufacturing</h3>[span_29](end_span)
-            [span_30](start_span)<p>Luxury, durable and fully customizable bed designs.</p>[span_30](end_span)
-        </div>
-        <div class="card">
-            [span_31](start_span)<h3>On-Site Repair</h3>[span_31](end_span)
-            [span_32](start_span)<p>Professional sofa & bed repair services at your home.</p>[span_32](end_span)
-        </div>
-        <div class="card">
-            [span_33](start_span)<h3>Complete Customization</h3>[span_33](end_span)
-            [span_34](start_span)<p>Select fabric, size, design & comfort level tailored for you.</p>[span_34](end_span)
+            <h3>Bed Manufacturing</h3>
+            [span_6](start_span)<p>Luxury, durable and fully customizable bed designs.[span_6](end_span)</p>
         </div>
     </div>
 </section>
@@ -236,28 +226,26 @@ section{
 <section id="gallery">
     <h2 class="section-title">Our Luxury Sofa Collection</h2>
     <div class="gallery">
-        [span_35](start_span)<img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1000&q=80" alt="Luxury Sofa">[span_35](end_span)
-        [span_36](start_span)<img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80" alt="Modern Sofa">[span_36](end_span)
-        [span_37](start_span)<img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=80" alt="Designer Sofa">[span_37](end_span)
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1000&q=80" alt="Luxury Sofa">
+        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80" alt="Modern Sofa">
     </div>
 </section>
 
 <section id="contact">
     <h2 class="section-title">Contact Us</h2>
     <div class="contact-box">
-        [span_38](start_span)<p><strong>Owner:</strong> Harjot Singh</p>[span_38](end_span)
-        [span_39](start_span)<p><strong>Phone:</strong> 9899256684</p>[span_39](end_span)
-        [span_40](start_span)<p><strong>WhatsApp:</strong> 9899256684</p>[span_40](end_span)
+        [span_7](start_span)<p><strong>Owner:</strong> Harjot Singh[span_7](end_span)</p>
+        [span_8](start_span)<p><strong>Phone:</strong> 9899256684[span_8](end_span)</p>
+        [span_9](start_span)<p><strong>WhatsApp:</strong> 9899256684[span_9](end_span)</p>
         <p><strong>Address:</strong><br>
-        Shop No - 9, Central Plaza, Noida Sector 4<br>
-        [span_41](start_span)Near Gaur City Mall, Delhi NCR</p>[span_41](end_span)
+        [span_10](start_span)Shop No - 9, Central Plaza, Noida Sector 4, Near Gaur City Mall, Delhi NCR[span_10](end_span)</p>
     </div>
 </section>
 
-<a href="https://wa.me/919899256684" class="whatsapp" target="_blank">WhatsApp</a>
+[span_11](start_span)<a href="https://wa.me/919899256684" class="whatsapp" target="_blank">WhatsApp[span_11](end_span)</a>
 
-<footer style="text-align:center; padding:20px; color:#777;">
-    © 2026 Singh CloudSit Decor | [span_42](start_span)[span_43](start_span)All Rights Reserved[span_42](end_span)[span_43](end_span)
+<footer style="text-align:center; padding:20px; color:#777; background:#fff;">
+    © 2026 Singh CloudSit Decor | [span_12](start_span)All Rights Reserved[span_12](end_span)
 </footer>
 
 </body>
